@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, Segment } from 'semantic-ui-react'
 import { Container } from 'semantic-ui-react'
+import CartSummary from './CartSummary'
 
 export default class Navi extends Component {
   state = { activeItem: 'home' }
@@ -33,11 +34,7 @@ export default class Navi extends Component {
               onClick={this.handleItemClick}
             />
             <Menu.Menu position='right'>
-              <Menu.Item
-                name='cartItems'
-                active={activeItem === 'cartItems'}
-                onClick={this.handleItemClick}
-              />
+              {<CartSummary/>}
             </Menu.Menu>
           </Container>
         </Menu>

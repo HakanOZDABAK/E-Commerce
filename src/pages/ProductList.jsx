@@ -3,13 +3,22 @@ import ProductService from '../services/productServices'
 import { Card as GroupCard,Icon } from 'semantic-ui-react';
 import { Card, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../store/actions/cartActions';
 export default function ProductList() {
+    const dispatch = useDispatch()
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
         let productService = new ProductService();
         productService.getProducts().then((result) => setProducts(result.data))
     }, [])
+
+    const handleAddToCart =(product)=>{
+        dispatch(addToCart(product));
+        console.log(product)
+   
+       }
     return (
         <div>
             <GroupCard.Group itemsPerRow={4}>
@@ -23,7 +32,7 @@ export default function ProductList() {
                             Product Price is = {product.price}<Icon name='lira sign' /><br/>
                             It is on offer = {String(product.on_offer)}<br/>
                         </Card.Text>
-                        <Button style={{backgroundColor:"green"}} >Ekle</Button>
+                        <Button style={{backgroundColor:"green"}} onClick={()=>handleAddToCart(product)}>Ekle</Button>
                         <Button style={{marginLeft:"20px",backgroundColor:"red"}}>Çıkar</Button>
                     </Card.Body>
                 </Card>)}
