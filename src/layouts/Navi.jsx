@@ -5,17 +5,19 @@ import { Container } from 'semantic-ui-react'
 import CartSummary from './CartSummary'
 
 export default class Navi extends Component {
+  
   state = { activeItem: 'home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  
   render() {
     const { activeItem } = this.state
-
     return (
-      <Segment inverted>
+      
+      <Segment style={{borderRadius:"30%"}} inverted>
 
-        <Menu inverted pointing secondary>
+        <Menu  inverted pointing secondary >
           <Container>
           <Link to='/products' >  <Menu.Item
               name='home'

@@ -1,0 +1,29 @@
+.body_back {
+    width: 250px;
+    height: 300px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    border-radius: 15px;
+
+}
+
+.body_front {
+    position: "center";
+    width: auto;
+    height: 170px;
+    border-radius: 30%;
+    background-color: gray;
+   
+
+}
+
+.body_fill_red{
+    width: auto;
+    height: 125px;
+    border-radius: 12px;
+    background-color: gray;
+    
+}
+

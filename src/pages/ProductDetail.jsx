@@ -28,7 +28,7 @@ export default function ProductDetail() {
         </Card.Content>
         <Card.Content extra>
           <a style={{ fontWeight: "bold" }}>
-            It is {product.price} 
+            It is {product.price} <Icon name='try'/>
           </a>
         </Card.Content>
       </Card>
