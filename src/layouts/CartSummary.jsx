@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 export default function CartSummary() {
 
   const { cartItems } = useSelector(state => state.cart)
-
+  
   return (
     <div>
       <Dropdown item text="Sepetiniz">

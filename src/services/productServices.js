@@ -1,14 +1,19 @@
 import axios from "axios"
 
-export default class ProductService{
-   getProducts(){
+export default class ProductService {
+   getProducts() {
       return axios.get("https://data.hakanozdabak.dev/items/")
    }
-   
-   getProductByName(productName){
-    
+
+   getProductByName(productName) {
+
       return axios.get(`https://data.hakanozdabak.dev/items_get_by_name/${productName}`)
 
    }
-     
+   getProductByCategory(productCategory) {
+
+      return axios.get(`https://data.hakanozdabak.dev/items_get_by/${productCategory}`)
+
+   }
+
 }

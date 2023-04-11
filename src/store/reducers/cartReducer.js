@@ -14,10 +14,9 @@ export default function cartReducer(state=initalState,{type,payload}){
     console.log(product)
     if(product){
         product.quantity++;
-        return{...state,};
+        return{...state,product};
     }else{
         return{
-
             ...state,
             cartItems:[...state.cartItems,{quantity:1,product:payload}]
         }
